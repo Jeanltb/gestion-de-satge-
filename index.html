@@ -58,32 +58,7 @@
 			</div>
 		</form>
 </div>
-<table class="table table-striped"> 
-        <tr>
-		<th>
-			prenom
-		</th>
-		<th>
-			 lieu de naissance
-		</th>
-		
-		<th>
-			date de naissance 
-		</th>
-		<th colspan="2" style="text-align:center;">
-			options
-		</th>
-	</tr>
-	<?php foreach($donnees as $value){?>
-<tr>
-	<td><?php echo $value->prenom; ?></td>
-	<td><?php echo $value->date_de_naissance; ?></td>
-	<td><?php echo $value->lieu_de_naissance; ?></td>
-	<td> <a href="index.php?id_eleve=<?php echo $value->id_eleve; ?>">supprimer</a></td>
-	<td> <a href="modifier.php?id_eleve=<?php echo $value->id_eleve; ?>">modifier</a></td>
-</tr>
-<?php }?>
-</table>
+
 </body>
 </html>
 
