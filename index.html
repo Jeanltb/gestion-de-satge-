@@ -1,26 +1,4 @@
-<?php
-include("config/connexion.php");//coonexion
 
-if(isset($_POST["nom"])){// si existe
-	extract($_POST);// extrait les donnees en variable
-	$insert_eleve='INSERT INTO eleve(prenom,date_de_naissance,lieu_de_naissance) VALUE(?,?,?)';
-
-	$insert_eleve=$pdo->prepare($insert_eleve);
-
-	$insert_eleve->execute([$prenom,$date_de_naissance,$lieu_de_naissance]);
-
-}
-//recuper les donnees de la table eleve 
-$recuperation=$pdo->query("SELECT * FROM eleve");
-$donnees = $recuperation->fetchAll(PDO::FETCH_OBJ);
-
-if(isset($_GET['id_eleve'])){
-	$reponse = $pdo->query("DELETE FROM eleve WHERE id_eleve=' ".$_GET['id_eleve']."'");//supprimer...
-	header("location: index.php");
-}
-
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
